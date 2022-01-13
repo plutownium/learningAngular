@@ -22,4 +22,9 @@ describe('DashboardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it("should have one h3 and one app-chart", () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector("h3").textContent).toContain("Chart");
+  })
 });
