@@ -16,10 +16,11 @@ export class ParentComponent implements OnInit {
 
   addNumber(newValue: number) {
     // 
-    this.actualNumber = newValue;
+    this.actualNumber = this.actualNumber + newValue;
   }
 
   subtractOne() {
     //
+    this.actualNumber = this.actualNumber - 1;
   }
 }

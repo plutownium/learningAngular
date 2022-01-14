@@ -24,7 +24,7 @@ export class ChildComponent {
 
   signalAddOne(sth: string) {
     // TODO: let user use a number input to change from 1-5 (but not 6) to add per click
-    const convertedInteger: number = parseInt(sth, 10)
+    const convertedInteger: number = +sth;
     this.someMagicEvent.emit(convertedInteger);
   }
 
