@@ -1,2 +1,8 @@
 <p>parent works!</p>
-<div><app-child></app-child></div>
+<h1>{{ actualNumber }}</h1>
+<div>
+  <app-child
+    (someMagicEvent)="addNumber($event)"
+    (subtraction)="subtractOne()"
+  ></app-child>
+</div>

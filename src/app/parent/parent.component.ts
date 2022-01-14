@@ -12,4 +12,14 @@ export class ParentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  actualNumber = 0;
+
+  addNumber(newValue: number) {
+    // 
+    this.actualNumber = newValue;
+  }
+
+  subtractOne() {
+    //
+  }
 }
