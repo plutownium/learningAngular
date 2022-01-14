@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewComponent } from './view.component';
+import { ViewerComponent } from './viewer.component';
 
 describe('ViewComponent', () => {
-  let component: ViewComponent;
-  let fixture: ComponentFixture<ViewComponent>;
+  let component: ViewerComponent;
+  let fixture: ComponentFixture<ViewerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewComponent ]
+      declarations: [ ViewerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewComponent);
+    fixture = TestBed.createComponent(ViewerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -24,7 +24,7 @@ describe('ViewComponent', () => {
   });
 
   it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(ViewComponent);
+    const fixture = TestBed.createComponent(ViewerComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Test code');

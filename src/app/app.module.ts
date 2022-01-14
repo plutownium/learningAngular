@@ -1,22 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { NgChartsModule } from 'ng2-charts';
+
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ViewComponent } from './view/view.component';
 import { HeadlineComponent } from './headline/headline.component';
 import { ChartComponent } from './chart/chart.component';
+import { ViewerComponent } from './viewer/viewer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    ViewComponent,
     HeadlineComponent,
-    ChartComponent
+    ChartComponent,
+    ViewerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

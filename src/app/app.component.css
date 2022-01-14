@@ -1,0 +1,7 @@
+.viewerMainContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  height: 180px;
+  border: 2px solid red;
+}
