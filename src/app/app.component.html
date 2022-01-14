@@ -5,12 +5,12 @@
     <app-viewer [number]="9420"></app-viewer>
   </div>
   <div class="viewerMainContainer">
-    <app-headline [headline]="'viewer94314'"></app-headline>
+    <!-- <app-headline [headline]="'viewer94314'"></app-headline>
     <app-dashboard [title]="'time on pain point 1'"></app-dashboard>
     <app-dashboard [title]="'bounce rate'"></app-dashboard>
-    <app-dashboard [title]="'cost per click'"></app-dashboard>
+    <app-dashboard [title]="'cost per click'"></app-dashboard> -->
   </div>
-  <div>
+  <div id="assignmentContainer">
     <div style="width: 100%; display: flex; justify-content: center">
       <h3
         style="
@@ -23,6 +23,11 @@
       >
         Todo app
       </h3>
+    </div>
+    <div>
+      <app-parent>
+        <app-child></app-child>
+      </app-parent>
     </div>
   </div>
 </div>
