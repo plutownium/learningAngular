@@ -3,13 +3,13 @@ import { ChartConfiguration, ChartEvent, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
-  selector: 'app-line-chart',
-  templateUrl: './line-chart.component.html',
-  styleUrls: [ './line-chart.component.scss' ]
+  selector: 'app-chart',
+  templateUrl: './chart.component.html',
+  styleUrls: [ './chart.component.css' ]
 })
-export class LineChartComponent {
+export class ChartComponent {
 
-  public lineChartData: ChartConfiguration['data'] = {
+  public chartData: ChartConfiguration['data'] = {
     datasets: [
       {
         data: [ 65, 59, 80, 81, 56, 55, 40 ],
@@ -49,7 +49,7 @@ export class LineChartComponent {
     labels: [ 'January', 'February', 'March', 'April', 'May', 'June', 'July' ]
   };
 
-  public lineChartOptions: ChartConfiguration['options'] = {
+  public chartOptions: ChartConfiguration['options'] = {
     elements: {
       line: {
         tension: 0.5
@@ -75,30 +75,30 @@ export class LineChartComponent {
 
     plugins: {
       legend: { display: true },
-      annotation: {
-        annotations: [
-          {
-            type: 'line',
-            scaleID: 'x',
-            value: 'March',
-            borderColor: 'orange',
-            borderWidth: 2,
-            label: {
-              position: 'center',
-              enabled: true,
-              color: 'orange',
-              content: 'LineAnno',
-              font: {
-                weight: 'bold'
-              }
-            }
-          },
-        ],
-      }
+      // annotation: {
+      //   annotations: [
+      //     {
+      //       type: 'line',
+      //       scaleID: 'x',
+      //       value: 'March',
+      //       borderColor: 'orange',
+      //       borderWidth: 2,
+      //       label: {
+      //         position: 'center',
+      //         enabled: true,
+      //         color: 'orange',
+      //         content: 'LineAnno',
+      //         font: {
+      //           weight: 'bold'
+      //         }
+      //       }
+      //     },
+      //   ],
+      // }
     }
   };
 
-  public lineChartType: ChartType = 'line';
+  public chartType: ChartType = 'line';
 
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
 
@@ -107,9 +107,9 @@ export class LineChartComponent {
   }
 
   public randomize(): void {
-    for (let i = 0; i < this.lineChartData.datasets.length; i++) {
-      for (let j = 0; j < this.lineChartData.datasets[i].data.length; j++) {
-        this.lineChartData.datasets[i].data[j] = LineChartComponent.generateNumber(i);
+    for (let i = 0; i < this.chartData.datasets.length; i++) {
+      for (let j = 0; j < this.chartData.datasets[i].data.length; j++) {
+        this.chartData.datasets[i].data[j] = ChartComponent.generateNumber(i);
       }
     }
     this.chart?.update();
@@ -130,25 +130,25 @@ export class LineChartComponent {
   }
 
   public pushOne(): void {
-    this.lineChartData.datasets.forEach((x, i) => {
-      const num = LineChartComponent.generateNumber(i);
+    this.chartData.datasets.forEach((x, i) => {
+      const num = ChartComponent.generateNumber(i);
       x.data.push(num);
     });
-    this.lineChartData?.labels?.push(`Label ${ this.lineChartData.labels.length }`);
+    this.chartData?.labels?.push(`Label ${ this.chartData.labels.length }`);
 
     this.chart?.update();
   }
 
   public changeColor(): void {
-    this.lineChartData.datasets[2].borderColor = 'green';
-    this.lineChartData.datasets[2].backgroundColor = `rgba(0, 255, 0, 0.3)`;
+    this.chartData.datasets[2].borderColor = 'green';
+    this.chartData.datasets[2].backgroundColor = `rgba(0, 255, 0, 0.3)`;
 
     this.chart?.update();
   }
 
   public changeLabel(): void {
-    if (this.lineChartData.labels) {
-      this.lineChartData.labels[2] = [ '1st Line', '2nd Line' ];
+    if (this.chartData.labels) {
+      this.chartData.labels[2] = [ '1st Line', '2nd Line' ];
     }
 
     this.chart?.update();

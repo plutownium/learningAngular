@@ -5,9 +5,9 @@
         baseChart
         width="400"
         height="400"
-        [data]="lineChartData"
-        [options]="lineChartOptions"
-        [type]="lineChartType"
+        [data]="chartData"
+        [options]="chartOptions"
+        [type]="chartType"
         (chartHover)="chartHovered($event)"
         (chartClick)="chartClicked($event)"
       ></canvas>
@@ -16,13 +16,13 @@
   <div class="flex-item">
     <table class="table table-responsive table-condensed">
       <tr>
-        <th *ngFor="let label of lineChartData.labels">{{ label }}</th>
+        <th *ngFor="let label of chartData.labels">{{ label }}</th>
       </tr>
       <tr
-        *ngFor="let d of lineChartData.datasets; let i = index"
+        *ngFor="let d of chartData.datasets; let i = index"
         [class]="'line-' + i"
       >
-        <td *ngFor="let label of lineChartData.labels; let j = index">
+        <td *ngFor="let label of chartData.labels; let j = index">
           {{ d && d.data[j] }}
         </td>
       </tr>
