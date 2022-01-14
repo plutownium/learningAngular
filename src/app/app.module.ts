@@ -8,13 +8,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import { AppRoutingModule } from './app-routing.module';
+// import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FeaturesComponent } from './features/features.component';
+// import { FeaturesComponent } from './features/features.component';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeadlineComponent } from './features/headline/headline.component';
+import { HeadlineComponent } from './headline/headline.component';
 import { ChartComponent } from './chart/chart.component';
 import { ViewerComponent } from './viewer/viewer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
