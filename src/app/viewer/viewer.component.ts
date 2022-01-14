@@ -1,9 +1,10 @@
-import { Component, OnInit,ViewChild,ElementRef, Input,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit,ViewChild,ElementRef, Input,Output,EventEmitter,ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-viewer',
   templateUrl: './viewer.component.html',
-  styleUrls: ['./viewer.component.css']
+  styleUrls: ['./viewer.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ViewerComponent implements OnInit {
   @Input() message: string;

@@ -1,3 +1,7 @@
 .viewerBox {
   border: 2px solid black;
 }
+
+p {
+  text-decoration: line-through !important;
+}
