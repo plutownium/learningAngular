@@ -19,6 +19,8 @@ export class ChildComponent {
  
   ]
 
+  @Input() receivedInt: number;
+
   @Output() someMagicEvent = new EventEmitter<number>();
   @Output() subtraction = new EventEmitter<number>();
 

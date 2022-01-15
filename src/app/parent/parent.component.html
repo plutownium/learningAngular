@@ -1,7 +1,13 @@
-<p>parent works!</p>
-<h1>{{ actualNumber }}</h1>
 <div>
+  <div style="display: flex">
+    <p>parent works!</p>
+    <button (click)="affectChild(1)" class="childSignalBtn">1</button>
+    <button (click)="affectChild(2)" class="childSignalBtn">2</button>
+    <button (click)="affectChild(3)" class="childSignalBtn">3</button>
+  </div>
+  <h1>{{ actualNumber }}</h1>
   <app-child
+    [receivedInt]="integerToPass"
     (someMagicEvent)="addNumber($event)"
     (subtraction)="subtractOne()"
   ></app-child>

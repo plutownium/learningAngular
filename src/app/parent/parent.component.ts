@@ -23,4 +23,10 @@ export class ParentComponent implements OnInit {
     //
     this.actualNumber = this.actualNumber - 1;
   }
+
+  integerToPass = 0;
+  affectChild(inputNum: number) {
+    // fill
+    this.integerToPass = this.integerToPass + inputNum;
+  }
 }
